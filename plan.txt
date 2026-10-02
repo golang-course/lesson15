@@ -1,0 +1,33 @@
+Магазин по продаже телефонов
+Phone {
+    id int
+    vendor string
+    model string
+    price int
+}
+=====================
+/ - главная страница
+    GET - отобразить ассортимент (все телефоны) HTML
+/about - страница про магазин телефонов
+    GET - Получить html с инфо о магазине
+/contacts - страница про контакты
+    GET - Получить html с инфо о контактах в магазине
+    POST - с JSON
+        {
+            email: "user@example.com", 
+            message: "текст отзыва"
+        }
+
+/api/phones/ - JSON со всеми телефонами
+    GET - получить JSON со всеми телефонами
+    POST - добавляет новый телефон
+/api/phones/<id> - старница одного телефона (json)
+    GET - получить JSON для одного телефона по его id
+==============
+
+/order
+    POST -  с JSON
+    {
+        email: "user@example.com", 
+        idPhone: 12345
+    }
