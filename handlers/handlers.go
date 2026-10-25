@@ -99,3 +99,13 @@ func OnePhoneHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 	}
 }
+
+func UnknownHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPut {
+		log.Println("YES!!!")
+		w.Write([]byte("ALL GOOD!"))
+	} else {
+		w.WriteHeader(http.StatusMethodNotAllowed)
+		return
+	}
+}
